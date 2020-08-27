@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "dd3e2635a2b65c31b918af7388515d14",
@@ -321,6 +321,7 @@
                     "homepage": "http://www.acci.cz"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2014-04-08T15:00:19+00:00"
         },
         {
@@ -365,6 +366,7 @@
                     "homepage": "http://www.acci.cz/"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
@@ -423,6 +425,7 @@
                 "serialize",
                 "tokenizer"
             ],
+            "abandoned": "opis/closure",
             "time": "2015-12-05T17:17:57+00:00"
         },
         {
@@ -756,6 +759,7 @@
                 "cron",
                 "schedule"
             ],
+            "abandoned": "dragonmantank/cron-expression",
             "time": "2016-01-26T21:23:30+00:00"
         },
         {
@@ -2066,16 +2070,16 @@
         },
         {
             "name": "unisharp/laravel-filemanager",
-            "version": "v1.7.6",
+            "version": "v1.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UniSharp/laravel-filemanager.git",
-                "reference": "bc3d5975c19445ed5a64a80a186356a91af8d278"
+                "reference": "4efe7057b6a7d7a5feccf9e2fb68146758fd7a8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/bc3d5975c19445ed5a64a80a186356a91af8d278",
-                "reference": "bc3d5975c19445ed5a64a80a186356a91af8d278",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/4efe7057b6a7d7a5feccf9e2fb68146758fd7a8c",
+                "reference": "4efe7057b6a7d7a5feccf9e2fb68146758fd7a8c",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2130,7 @@
                 "tinymce",
                 "upload"
             ],
-            "time": "2017-04-28T06:34:29+00:00"
+            "time": "2017-05-18T01:41:19+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

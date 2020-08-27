@@ -19,9 +19,9 @@ update:
 
 test:
 	@echo "PSR-2 Testing"
-	./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/controllers
-	./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/Events
-	./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/middlewares
-	./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/traits
+	php ./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/controllers
+	php ./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/Events
+	php ./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/middlewares
+	php ./vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 vendor/unisharp/laravel-filemanager/src/traits
 	@echo "End-To-End Testing"
-	vendor/bin/phpunit vendor/unisharp/laravel-filemanager/tests/ApiTest.php
+	sh ./vendor/bin/phpunit vendor/unisharp/laravel-filemanager/tests/ApiTest.php

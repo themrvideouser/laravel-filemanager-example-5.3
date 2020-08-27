@@ -12,10 +12,14 @@ return [
 
     // Middlewares which should be applied to all package routes.
     // For laravel 5.1 and before, remove 'web' from the array.
-    'middlewares' => ['web', 'auth'],
+    'middlewares' => ['web','auth'],
 
     // The url to this package. Change it if necessary.
     'prefix' => 'laravel-filemanager',
+
+    // The prefix of urls to non-public files, for exmaple if: base_directory !== 'public'
+    // Without slashes
+    'urls_prefix' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,12 +32,12 @@ return [
     // If true, share folder will be created when allow_multi_user is true.
     'allow_share_folder' => true,
 
-    // Flexible way to customize client folders accessibility
-    // If you want to customize client folders, publish tag="lfm_handler"
-    // Then you can rewrite userField function in App\Handler\ConfigHander class
-    // And set 'user_field' to App\Handler\ConfigHander::class
+    // Flexibla way to customize client folders accessibility
     // Ex: The private folder of user will be named as the user id.
-    'user_field' => Unisharp\Laravelfilemanager\Handlers\ConfigHandler::class,
+    // You cant use a closure when using the optimized config file (in Laravel 5.2 anyway)
+    'user_field' => function() {
+        return auth()->user()->id;
+    },
 
     /*
     |--------------------------------------------------------------------------
@@ -72,7 +76,7 @@ return [
     'rename_file' => false,
 
     // If rename_file set to false and this set to true, then non-alphanumeric characters in filename will be replaced.
-    'alphanumeric_filename' => false,
+    'alphanumeric_filename' => true,
 
     // If true, non-alphanumeric folder name will be rejected.
     'alphanumeric_directory' => false,
@@ -94,22 +98,6 @@ return [
         'image/gif',
         'image/svg+xml',
     ],
-
-    // If true, image thumbnails would be created during upload
-    'should_create_thumbnails' => true,
-
-    // Create thumbnails automatically only for listed types.
-    'raster_mimetypes' => [
-        'image/jpeg',
-        'image/pjpeg',
-        'image/png',
-    ],
-
-    // permissions to be set when create a new folder or when it creates automatically with thumbnails
-    'create_folder_mode' => 0755,
-
-    // permissions to be set on file upload.
-    'create_file_mode' => 0644,
 
     // available since v1.3.0
     // only when '/laravel-filemanager?type=Files'
@@ -172,15 +160,11 @@ return [
     |--------------------------------------------------------------------------
     | php.ini override
     |--------------------------------------------------------------------------
-    |
-    | These values override your php.ini settings before uploading files
-    | Set these to false to ingnore and apply your php.ini settings
-    |
-    | Please note that the 'upload_max_filesize' & 'post_max_size'
-    | directives are not supported.
     */
+    // These values override your php.ini settings before uploading files
+    // Set these to false to ingnore and apply your php.ini settings
     'php_ini_overrides' => [
-        'memory_limit'        => '256M',
-    ],
+        'memory_limit'        => '256M'
+    ]
 
 ];

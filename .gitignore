@@ -9,3 +9,4 @@ Homestead.yaml
 /public/vendor
 /public/photos
 /public/files
+/database/*.sqlite
